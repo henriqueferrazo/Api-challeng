@@ -6,7 +6,7 @@ const route = Router()
 app.use(express.json())
 
 route.get('/', (req: Request, res: Response) => {
-    res.json({ message: 'hello word with Typescripy' })
+    res.json({ message: 'Olá mundo, esse é meu primeiro app Typescript' })
 })
 
 app.use(route)

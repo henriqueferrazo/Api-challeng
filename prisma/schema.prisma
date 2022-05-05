@@ -1,12 +1,22 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["mongodb"]
 }
 
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
+}
+
+model Video {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  titulo    String
+  descricao String
+  url       String    @unique
+
+  @@map("videos")
 }
