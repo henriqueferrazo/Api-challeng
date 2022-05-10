@@ -1,14 +1,6 @@
-const express = require('express')
-import { Router, Request, Response} from 'express'
+import app from "./app"
 
-const app = express()
-const route = Router()
-app.use(express.json())
+const port = process.env.PORT || 5000
 
-route.get('/', (req: Request, res: Response) => {
-    res.json({ message: 'Olá mundo, esse é meu primeiro app Typescript' })
-})
+app.listen(port, () => `Servidor funcionando na port ${port}`)
 
-app.use(route)
-
-app.listen(5000, () => 'Servidor funcionando na port 5000')
